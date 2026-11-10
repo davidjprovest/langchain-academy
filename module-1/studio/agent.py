@@ -34,7 +34,7 @@ def divide(a: int, b: int) -> float:
 tools = [add, multiply, divide]
 
 # Define LLM with bound tools
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
+llm = ChatGoogleGenerativeAI(model="gemini-3.5-flash", timeout=60, max_retries=1)
 llm_with_tools = llm.bind_tools(tools)
 
 # System message

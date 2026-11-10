@@ -14,7 +14,7 @@ def multiply(a: int, b: int) -> int:
     return a * b
 
 # LLM with bound tool
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
+llm = ChatGoogleGenerativeAI(model="gemini-3.5-flash", timeout=60, max_retries=1)
 llm_with_tools = llm.bind_tools([multiply])
 
 # Node
